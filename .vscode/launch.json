@@ -1,0 +1,30 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Programm starten",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/develop"
+        },
+        {
+            "name": "Gatsby build Conditional",
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
+            "args": ["build", "--write-to-file", "--log-pages"],
+            "env": {"GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES":"true","CI":"true"},
+            "skipFiles": [],
+            "stopOnEntry": false,
+            "runtimeArgs": ["--nolazy"],
+            "sourceMaps": false
+         }
+    ]
+}
